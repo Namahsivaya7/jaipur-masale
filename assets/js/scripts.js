@@ -155,7 +155,7 @@ function activateMenuOnScroll() {
         LINKS[0].classList.add("active");
         return;
     }  else if (scrollLength >= totalHeight) {
-        //Activate Reservations in menu when scrolled to the bottom of page (because we do not have a contact page section yet)
+        //Activate Reservations in menu when scrolled to the bottom o   `1f page (because we do not have a contact page section yet)
 		// This might seem useless at first, but there are cases in which, for certain sizes of the screen, the breakpoint of the Reservations section is never scrolled passed, so the tab needs to be activated forcefully.
         LINKS[LINKS.length - 3].classList.add("active");
         return;

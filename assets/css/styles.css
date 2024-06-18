@@ -41,7 +41,10 @@ footer {
 	position: relative;
 }
 
-.container,
+.container{
+	width: 90%;
+	margin: 0;
+}
 #about,
 #menu,
 #reservation,
@@ -349,6 +352,7 @@ main section:nth-of-type(8) {
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: center;
+	align-items: center;
 }
 
 #locations {
@@ -633,8 +637,9 @@ p#arrow {
 }
 
 #reviews .content {
-    max-width: 800px;
-    margin: auto;
+    /* max-width: 800px;
+    margin: auto; */
+	
     text-align: center;
 }
 

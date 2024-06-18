@@ -17,11 +17,17 @@
 	<link rel="stylesheet" href="./assets/css/styles.css">
 	
 	<style>
+
+
         /* Add responsive styles here */
         @media screen and (max-width: 768px) {
             /* Adjust styles for smaller screens */
+			#reviewList{
+				width: 50%;
+				max-width: 50%;
+			}
             .content {
-                padding: 20px;
+                padding: 20px 0;
             }
 main{
 	margin-top: 100px;
@@ -29,6 +35,15 @@ main{
 
             /* You can add more responsive styles as needed */
         }
+
+		@media screen and (max-width:480px){
+			header{
+				width: 100%;
+			}
+			.container{
+				width: 100%;
+			}
+		}
 #logo{
 	border: 0;
 }
@@ -113,14 +128,15 @@ nav a {
         }
 
         .content {
-            width: 95%;
+            /* width: 95%; */
         }
 
         /* Responsive styles */
         @media screen and (max-width: 768px) {
             header .container {
-                flex-direction: column;
+                /* flex-direction: column; */
                 align-items: center;
+				padding: 0 10px;
             }
 
             nav {
@@ -157,12 +173,28 @@ nav a {
                 width: 100%;
                 text-align: center;
             }
+			#reviewList{
+width: 50%;
+			}
         }
+		@media screen and (max-width: 390px) {
+			#reviewList{
+width: 50%;
+			}}
 
         @media screen and (max-width: 480px) {
-            #logo {
+			#reviewList{
+width: 50%;
+			}
+            .container{
+				display: flex;
+				justify-content: center;
+				margin: 0;
+			}
+			#logo {
                 font-size: 1.5rem;
 				border: 0;
+				
             }
 #top{
 	left: 90%;
@@ -213,12 +245,261 @@ nav a {
         .header-hide {
             top: -100px;
         }
+		
     </style>
 
+
+<style>
+	html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif, Calibri;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0e131c;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    transition: all 0.7s ease-in-out;
+}
+
+nav a {
+    margin: 0 10px;
+    padding-bottom: 3px;
+    color: #e6e6e6;
+    text-decoration: none;
+}
+
+nav a.active {
+    border-bottom: 2px solid #e6e6e6;
+}
+
+#logo a {
+    color: #e6e6e6;
+}
+
+main {
+    padding-top: 100px; /* Adjust this padding to avoid content hiding under the fixed header */
+    text-align: center;
+}
+
+#journey {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.circle-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.circle-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+section img{
+	min-width: 0;
+}
+.circle-box p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Positioning each box in a circular layout */
+.circle-box:nth-child(1) { top: 50%; left: 50%; transform: translate(-200%, -100%); }
+.circle-box:nth-child(2) { top: 15%; left: 50%; transform: translate(-50%, -15%); }
+.circle-box:nth-child(3) { top: 30%; left: 85%; transform: translate(-93%, -10%); }
+.circle-box:nth-child(4) { top: 70%; left: 85%; transform: translate(-85%, -70%); }
+.circle-box:nth-child(5) { top: 85%; left: 50%; transform: translate(-50%, -85%); }
+.circle-box:nth-child(6) { top: 70%; left: 15%; transform: translate(-15%, -70%); }
+.circle-box:nth-child(7) { top: 30%; left: 15%; transform: translate(-15%, -30%); }
+
+
+footer {
+    background-color: #0e131c;
+    color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .circle-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .circle-box {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-box {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* REviews section */
+
+#reviews {
+    padding: 50px 60px;
+    background-color: #f9f9f9;
+}
+
+#reviews .content {
+    /* max-width: 800px;
+    margin: auto; */
+    text-align: center;
+}
+
+#reviewList {
+    margin-top: 30px;
+}
+
+.review-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-name {
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.review-timestamp {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+}
+
+.review-text {
+    margin: 10px 0 0 60px; /* Adjust the margin-left to align text under the name */
+    color: #333;
+}
+#reviewTag{
+	color: rgb(34 162 248 );;
+}
+
+@media (max-width: 480px) {
+    #reviewContainer {
+        height: 300px; /* Adjust the height for mobile view */
+    }
+
+    .review-item {
+        padding: 15px;
+        margin-bottom: 10px;
+		width: 110%;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .review-name {
+        font-size: 1em;
+    }
+
+    .review-timestamp {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .circle-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .circle-box p {
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    /* Adjusted positions for smaller container */
+    .circle-box:nth-child(1) { top: 50%; left: 50%; transform: translate(-180%, -115%); }
+    .circle-box:nth-child(2) { top: 10%; left: 50%; transform: translate(-50%, -10%); }
+    .circle-box:nth-child(3) { top: 20%; left: 85%; transform: translate(-95%, 27%); }
+    .circle-box:nth-child(4) { top: 70%; left: 85%; transform: translate(-85%, -70%); }
+    .circle-box:nth-child(5) { top: 90%; left: 50%; transform: translate(-50%, -90%); }
+    .circle-box:nth-child(6) { top: 70%; left: 15%; transform: translate(-15%, -70%); }
+    .circle-box:nth-child(7) { top: 20%; left: 15%; transform: translate(-15%, -20%); }
+}
+
+</style>
 </head>
 
 <body>
-	<header id="go_to_top" data-aos="fade-down">
+	<header id="go_to_top" data-aos="fade-down" style="width: 100vw;">
 		<div class="gradient">
 			<div class="container">
 				<h2 id="logo"><a href="index.html"> Jaipur Masale </a></h2>
@@ -271,47 +552,34 @@ nav a {
 				<p>The Journey of Spice: From Farm to Your Table
 				<p>
 
-				<div class="process-main">
-					<div class="process-main-box">
-						<img src="./assets/img/farms-banner.jpeg" alt="Farms-Banner" >
-						<p>The Farms</p>
-					</div>
-
-					<img src="./assets/img/process-arrow.png" alt="Process-Arrow-Icon" class="process-arrow-icon">
-
-					<div class="process-main-box">
-						<img src="./assets/img/harvest-banner.jpg" alt="Harvest-Banner">
-						<p>The Harvest</p>
-					</div>
-
-					<img src="./assets/img/process-arrow.png" alt="Process-Arrow-Icon" class="process-arrow-icon">
-
-					<div class="process-main-box">
-						<img src="./assets/img/factory-banner.jpeg" alt="Factory-Banner">
-						<p>The Factory</p>
-					</div>
-
-					<img src="./assets/img/process-arrow.png" alt="Process-Arrow-Icon" class="process-arrow-icon">
-
-					<div class="process-main-box">
-						<img src="./assets/img/blending-image.jpeg" alt="Blending-Banner">
-						<p>The Blending</p>
-					</div>
-
-					<img src="./assets/img/process-arrow.png" alt="Process-Arrow-Icon" class="process-arrow-icon">
-
-					<div class="process-main-box">
-						<img src="./assets/img/packaging-image.jpeg" alt="Packaging-Banner">
-						<p>The Packaging</p>
-					</div>
-
-					<img src="./assets/img/process-arrow.png" alt="Process-Arrow-Icon" class="process-arrow-icon">
-
-					<div class="process-main-box">
-						<img src="./assets/img/promises-image.jpeg" alt="Promise-Banner">
-						<p>The Promise</p>
-					</div>
-				</div>
+					<section id="journey">
+						<div class="circle-container">
+							<div class="circle-box">
+								<img src="./assets/img/farms-banner.jpeg" alt="Farms-Banner">
+								<p>The Farms</p>
+							</div>
+							<div class="circle-box">
+								<img src="./assets/img/harvest-banner.jpg" alt="Harvest-Banner">
+								<p>The Harvest</p>
+							</div>
+							<div class="circle-box">
+								<img src="./assets/img/factory-banner.jpeg" alt="Factory-Banner">
+								<p>The Factory</p>
+							</div>
+							<div class="circle-box">
+								<img src="./assets/img/blending-image.jpeg" alt="Blending-Banner">
+								<p>The Blending</p>
+							</div>
+							<div class="circle-box">
+								<img src="./assets/img/packaging-image.jpeg" alt="Packaging-Banner">
+								<p>The Packaging</p>
+							</div>
+							<div class="circle-box">
+								<img src="./assets/img/promises-image.jpeg" alt="Promise-Banner">
+								<p>The Promise</p>
+							</div>
+						</div>
+					</section>
 		</section>
 
 		<section class="divider">
@@ -371,13 +639,13 @@ nav a {
 			</div>
 		</section>
 		
-		<div id="reviews" class="breakpoint">
+		<div id="reviews1" class="breakpoint" style="display: flex;justify-content: center;">
 			<div class="content" data-aos="fade-up">
 				<h1 class="highlight">Customer</h1>
 				<h1 class="topic">Reviews</h1>
 				<!-- <p class="symbol">&#10059;</p> -->
 		
-				
+<!-- 				
 				<form id="reviewForm">
 					<div class="form-group">
 						<label for="name">Name:</label>
@@ -390,11 +658,134 @@ nav a {
 					<button type="submit">Submit Review</button>
 				</form>
 		
-			
-				<div id="reviewsDisplay">
-					<h2>All Reviews</h2>
-					<div id="reviewList"></div>
+			 -->
+			 <section id="reviews" style="display: flex;background: transparent;">
+		
+				<div class="content" style="width: 50%;">
+					
+					
+					<div id="reviewList" style="">
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Absolutely loved the spices! The aroma and flavor were exceptional. Will definitely purchase again!</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/357704998_2210843052586746_3226156400605024797_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_7YpWt_rfwsQ7kNvgGJN0j3&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYDR58BV8NGkJCYF5W3pRb8WRULW-_jDFQsrtGJvLApZ2Q&oe=6675D686" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Siva</p>
+									<p class="review-timestamp">@siva • 10m</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>A delightful experience from start to finish. The packaging was neat and the spices were fresh. Highly recommended!</div>
+
+							<div class="review-header">
+								<img src="https://pbs.twimg.com/profile_images/1799621030228725760/Y2KxnwF0_400x400.jpg" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Manoj</p>
+									<p class="review-timestamp">@manoj7 • 30m</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Great quality and fantastic customer service. The spices have made a wonderful addition to my kitchen.</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/351472465_776288187332789_4950937395102273531_n.jpg?stp=dst-jpg_p200x200&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=HYiHJoRaoggQ7kNvgGXYoMA&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYBXax2Rx_-hluY7nl-4SuXsQU0WzGNHsTK5GymeIsaUHw&oe=6675CD29" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Sai Ganesh</p>
+									<p class="review-timestamp">@saiganesh • 2h</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Top-notch spices! The flavors are rich and vibrant. I am very pleased with my purchase.</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/326301792_1250534248832914_2354946064500014562_n.jpg?stp=dst-jpg_p200x200&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=aPn-plDhzpsQ7kNvgEz9kGi&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYC8ULuomVm8HdiakwXPXMzixYo_JywQGvnEnxOm4lQKZw&oe=6675D330" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Kiran</p>
+									<p class="review-timestamp">@kiran23 • 5h</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Fast shipping and excellent quality. The spices have exceeded my expectations in every way.</div>
+
+							<div class="review-header">
+								<img src="https://joinditto.in/static/67a5d59733a2f07178aea8413f75cc89/0195d/kaartics.webp" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Hussain</p>
+									<p class="review-timestamp">@hussain • 10h</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
+				<div class="content" style="width: 50%;">
+				
+					
+					<div id="reviewList" style="">
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Absolutely loved the spices! The aroma and flavor were exceptional. Will definitely purchase again!</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/357704998_2210843052586746_3226156400605024797_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_7YpWt_rfwsQ7kNvgGJN0j3&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYDR58BV8NGkJCYF5W3pRb8WRULW-_jDFQsrtGJvLApZ2Q&oe=6675D686" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Siva</p>
+									<p class="review-timestamp">@siva • 10m</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>A delightful experience from start to finish. The packaging was neat and the spices were fresh. Highly recommended!</div>
+
+							<div class="review-header">
+								<img src="https://pbs.twimg.com/profile_images/1799621030228725760/Y2KxnwF0_400x400.jpg" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Manoj</p>
+									<p class="review-timestamp">@manoj7 • 30m</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Great quality and fantastic customer service. The spices have made a wonderful addition to my kitchen.</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/351472465_776288187332789_4950937395102273531_n.jpg?stp=dst-jpg_p200x200&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=HYiHJoRaoggQ7kNvgGXYoMA&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYBXax2Rx_-hluY7nl-4SuXsQU0WzGNHsTK5GymeIsaUHw&oe=6675CD29" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Sai Ganesh</p>
+									<p class="review-timestamp">@saiganesh • 2h</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Top-notch spices! The flavors are rich and vibrant. I am very pleased with my purchase.</div>
+
+							<div class="review-header">
+								<img src="https://scontent.fhyd9-1.fna.fbcdn.net/v/t39.30808-1/326301792_1250534248832914_2354946064500014562_n.jpg?stp=dst-jpg_p200x200&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=aPn-plDhzpsQ7kNvgEz9kGi&_nc_ht=scontent.fhyd9-1.fna&oh=00_AYC8ULuomVm8HdiakwXPXMzixYo_JywQGvnEnxOm4lQKZw&oe=6675D330" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Kiran</p>
+									<p class="review-timestamp">@kiran23 • 5h</p>
+								</div>
+							</div>
+						</div>
+						<div class="review-item" style="gap: 16px;">
+							<div class="review-text" style="display: flex;flex-wrap: wrap;margin: 0;"><p id="reviewTag">@ jaipurmasale</p>Fast shipping and excellent quality. The spices have exceeded my expectations in every way.</div>
+
+							<div class="review-header">
+								<img src="https://joinditto.in/static/67a5d59733a2f07178aea8413f75cc89/0195d/kaartics.webp" alt="Avatar" class="avatar">
+								<div class="review-info">
+									<p class="review-name" style="margin-bottom: 0;">Hussain</p>
+									<p class="review-timestamp">@hussain • 10h</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+	
 			</div>
 		</div>
 		
@@ -488,7 +879,7 @@ nav a {
 
 			if (scrollTop > lastScrollTop) {
 				
-				header.style.top = '-100px';
+				header.style.top = '-70px';
 			} else {
 				header.style.top = '0';
 			}
@@ -531,6 +922,9 @@ nav a {
     });
 });
 
+	</script>
+	<script>
+	
 	</script>
 </body>
 
